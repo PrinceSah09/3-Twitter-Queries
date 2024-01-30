@@ -1,6 +1,6 @@
 # Assignment-3-Twitter-Queries
 
-## Note: All data are stored inside the repo (Twitter_Querry.sql) 
+## Note: All data are stored inside the repo file (Twitter_Querry.sql) 
 ## Answers of Assignment
  **1. Fetch all users name from database.**
 ```sql
