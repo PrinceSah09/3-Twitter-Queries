@@ -78,10 +78,22 @@ WHERE
 
  **8. Fetch user’s timeline (All tweets from users whom I am following with tweet content and user name who has tweeted it)**
 ```sql
-SELECT U.name, T.tweetContent FROM tweets T
-JOIN users U ON T.userId = U.id
-JOIN user_followers UF ON UF.followingId = T.userId
-WHERE UF.followerId = 2
-ORDER BY T.created_at DESC;
+SELECT
+    Tweet.content,
+    users.user_name AS UserName
+FROM
+    Tweet
+    JOIN users ON Tweet.user_id = users.id
+WHERE
+    Tweet.user_id IN (
+        SELECT
+            followed_id
+        FROM
+            Follow
+        WHERE
+            follower_id = 1
+    )
+ORDER BY
+    Tweet.twitted_at DESC;
 ```
-#
+
