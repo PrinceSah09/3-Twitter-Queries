@@ -288,7 +288,7 @@ where
 -- Query_7 :Fetch all commented tweet's content for a particular tweet by tweet id.
 SELECT
     CommentedTweet.content
-FROMx
+FROM
     Tweet AS CommentedTweet
     JOIN Tweet AS Comment ON CommentedTweet.tweet_id = Comment.parent_tweet_id
 WHERE
