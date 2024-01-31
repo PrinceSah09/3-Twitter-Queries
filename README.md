@@ -69,7 +69,7 @@ where
 ```sql
 SELECT
     CommentedTweet.content
-FROMx
+FROM
     Tweet AS CommentedTweet
     JOIN Tweet AS Comment ON CommentedTweet.tweet_id = Comment.parent_tweet_id
 WHERE
